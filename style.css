@@ -1,0 +1,117 @@
+/* 1. Reset & Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* 2. Sidebar */
+.sidebar {
+  position: fixed;   /* stays stuck on the left */
+  top: 0;
+  left: 0;
+  width: 200px;      /* wider so text isn’t cut */
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+body {
+  margin-left: 200px; /* push content away from sidebar */
+}
+
+/* 3. Navigation (Flexbox) */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;    
+  background-color: #75186e;
+  color: white;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;    /* visible by default */
+  gap: 1rem;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 4. Flexbox demo */
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+  background: lightblue;
+}
+
+.flex-item {
+  flex: 1;
+  background: steelblue;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+/* 5. Grid demo */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+  gap: 1rem;
+  padding: 1rem;
+  background: lightgreen;
+}
+
+.grid-item {
+  background: seagreen;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+/* 6. Footer */
+.footer {
+  background: #444242;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 7. Responsive breakpoints */
+@media (max-width: 768px) {
+  body {
+    margin-left: 0; /* remove sidebar offset */
+  }
+
+  .sidebar {
+    position: relative; /* sidebar moves with content */
+    width: 100%;
+    height: auto;
+  }
+
+  .flex-container {
+    flex-direction: column; /* stack flex items */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column grid */
+  }
+}
